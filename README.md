@@ -26,8 +26,8 @@
   
 
   ## SCREENSHOTS
-  <img src=./assets/images/shot1.png />
-  <img src=./assets/images/shot2.png />
+  <img src=./public/assets/images/shot1.png />
+  <img src=./public/assets/images/shot2.png />
 
   ## HEROKU APP
   https://afternoon-lowlands-64732.herokuapp.com/
