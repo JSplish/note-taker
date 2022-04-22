@@ -9,13 +9,13 @@ router.get("/api/notes", function (req, res) {
 });
 
 router.post("/api/notes", function (req, res) {
-    let userNode = {
+    let userNote = {
         id: Math.floor(Math.random() * 100),
         title: req.body.title,
         text: req.body.text
     }
-    console.log(userNode)
-    dbJson.push(userNode)
+    console.log(userNote)
+    dbJson.push(userNote)
     fs.writeFileSync("./db/db.json", JSON.stringify(dbJson), function (err) {
         if (err) throw err;
     })
@@ -25,14 +25,14 @@ router.post("/api/notes", function (req, res) {
 
 router.delete("/api/notes/:id", function (req, res) {
     //let updatedNotsList = dbJson.forEach(Element => Element.id !== req.params.id)
-    let updatedNotsList = []
+    let updatedNoteList = []
     for (let i = 0; i < dbJson.length; i++) {
         if (req.params.id != dbJson[i].id) {
             updatedNotsList.push(dbJson[i])
         }
     }
-    console.log(updatedNotsList)
-    dbJson = updatedNotsList
+    console.log(updatedNoteList)
+    dbJson = updatedNoteList
     fs.writeFileSync("./db/db.json", JSON.stringify(dbJson), function (err) {
         if (err) throw err;
     })
